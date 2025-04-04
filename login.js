@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Google Login
     window.onload = function () {
         google.accounts.id.initialize({
-            client_id: "352258216802-i2hmlnhmlnc36er43j35a7t1e436ka29.apps.googleusercontent.com",
+            client_id: "352258216802-9tegrsi6r3hgtgdgpbgn7gbuu0qsit9h.apps.googleusercontent.com",
             callback: handleGoogleLogin
         });
         google.accounts.id.renderButton(

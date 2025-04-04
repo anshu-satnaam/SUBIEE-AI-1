@@ -1,0 +1,186 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    color: #000000;
+}
+
+.navbar {
+    background-color: #071739;
+    padding: 15px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logo-text {
+    color: #E3C39D;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "Cambria Math", serif;
+}
+
+.outer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 80px 20px 20px;
+    box-sizing: border-box;
+}
+
+.registration-content {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #d1d1d1;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #071739;
+}
+
+.error-message {
+    color: #ff0000;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+}
+
+.create-account-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #071739;
+    color: #E3C39D;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.create-account-btn:hover {
+    background-color: #0a2258;
+}
+
+.login-box {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #d1d1d1;
+    text-align: center;
+}
+
+.login-link {
+    font-size: 14px;
+    color: #000000;
+    margin: 0 0 15px 0;
+}
+
+.login-link a {
+    color: #071739;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.login-link a:hover {
+    color: #0a2258;
+    text-decoration: underline;
+}
+
+.back-button {
+    background: none;
+    border: 2px solid #071739;
+    color: #071739;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.back-button:hover {
+    background-color: #071739;
+    color: #E3C39D;
+}
+
+/* Social Login Buttons */
+.social-login {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.google-btn, .facebook-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.google-btn {
+    background-color: #db4437;
+    color: white;
+}
+
+.google-btn:hover {
+    background-color: #c1351d;
+}
+
+.facebook-btn {
+    background-color: #1877f2;
+    color: white;
+}
+
+.facebook-btn:hover {
+    background-color: #165db7;
+}

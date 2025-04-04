@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         try {
-            const response = await fetch('/login', {
+            const response = await fetch('https://yourbackend.com/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password })
@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const result = await response.json();
             if (response.ok) {
                 alert(result.message || 'Login successful!');
+                document.getElementById('passwordError').style.display = 'none';
                 window.location.href = 'dashboard.html'; 
             } else {
                 alert(result.error || 'Login failed.');
@@ -53,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
             client_id: "352258216802-9tegrsi6r3hgtgdgpbgn7gbuu0qsit9h.apps.googleusercontent.com",
             callback: handleGoogleLogin
         });
+
         google.accounts.id.renderButton(
             document.getElementById("google-login"),
             { theme: "outline", size: "large" }
@@ -61,14 +63,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function handleGoogleLogin(response) {
         console.log("Google Auth Response:", response);
-        alert("Google login successful!");
-        window.location.href = "dashboard.html";
+        
+        fetch("/google-login", { 
+            method: "POST", 
+            headers: { "Content-Type": "application/json" }, 
+            body: JSON.stringify({ token: response.credential })
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                alert("Google login successful!");
+                window.location.href = "dashboard.html";
+            } else {
+                alert("Google login failed.");
+            }
+        })
+        .catch(error => {
+            console.error("Google login error:", error);
+            alert("An error occurred.");
+        });
     }
 
     // Facebook Login
     window.fbAsyncInit = function() {
         FB.init({
-            appId: 'YOUR_FACEBOOK_APP_ID',
+            appId: '352258216802-your-facebook-app-id', // Replace with your actual Facebook App ID
             cookie: true,
             xfbml: true,
             version: 'v12.0'
